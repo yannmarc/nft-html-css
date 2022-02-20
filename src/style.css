@@ -1,0 +1,215 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* Colors */
+
+    /* ------Primary----- */
+    --sft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Neutral */
+    --da-blue-main: hsl(217, 54%, 11%);
+    --blue-card: hsl(216, 50%, 16%);
+    --da-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --body-copy: 18px;
+    --fnt-primary: 'Inter';
+}
+
+/* General Styles */
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    color: var(--da-blue-line);
+    font-size: var(--body-copy);
+    line-height: 28px;
+    font-weight: 400;
+    margin: .8em 0em;
+}
+
+.heading {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: .8em;
+    transition: color cubic-bezier(0.165, 0.84, 0.44, 1) 1000ms;
+}
+
+.heading:hover {
+    color: var(--cyan);
+}
+
+.link{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 400;
+    transition: color cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
+}
+
+.link:hover {
+    color: var(--cyan);
+}
+
+.nft {
+    color: var(--cyan);
+    margin-left: .3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--da-blue-main);
+    font-family: var(--fnt-primary);
+    padding: 2em 1em;
+}
+
+.container {
+    background-color: var(--blue-card);
+    width: 350px;
+    height: auto;
+    padding: .8em;
+    border-radius: 8px;
+}
+
+/* General Styles ends here */
+
+
+/* Image Container */
+
+#img-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: all 2s ease-in-out 2s;
+}
+
+#img-container img{
+    width: 100%;
+}
+
+/* Image container ends here */
+
+/* NFT description starts here */
+
+.desc {
+    margin-left: .5em;
+}
+
+.cyan {
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+
+.time {
+    color: var(--da-blue-line);
+    font-weight: 600;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.nft-content {
+    margin-top: 1em;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+h6 {
+    margin-left: .6em;
+    color: var(--da-blue-line);
+}
+
+.user-img{
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+}
+
+.user-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.line {
+    display: block;
+    height: 1px;
+    background-color: var(--da-blue-line);
+    margin: .5em 0em;
+}
+
+/* Overlay section */
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.img-con {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: all 3s ease-in-out 2s;
+}
+
+.overlay::before {
+    content: '';
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--sft-blue);
+    opacity: .8;
+    display: none;
+}
+
+#img-container:hover .overlay::before {
+    display: inherit;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 1000ms;
+}
+
+#img-container:hover .img-con {
+    display: inherit;
+}
+
+/* NFT content ends here */
